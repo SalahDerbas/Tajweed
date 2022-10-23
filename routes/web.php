@@ -13,6 +13,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
+
+Auth::routes();
+
+Route::group(['middleware' => ['guest']], function () {
+
+    Route::get('/', function () {
+        return view('auth.login');
+    });
+
 });
+
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' , 'auth' ]
+    ], function(){ 
+        
+     //==============================dashboard============================
+     Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
+        
+
+    });
+
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+{
+    
+
+    
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

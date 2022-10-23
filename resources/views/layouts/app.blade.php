@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{asset('assets/images/Logo SD1.png')}}" rel="icon">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title> Tajweed - Quran </title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
