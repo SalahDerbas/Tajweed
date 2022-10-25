@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="{{asset('assets/images/Logo SD1.png')}}" rel="icon">
 
 <head>
     <meta charset="utf-8">
+    <link href="{{asset('assets/images/Logo SD1.png')}}" rel="icon">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="HTML5 Template" />
     <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />

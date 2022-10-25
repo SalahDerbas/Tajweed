@@ -1,8 +1,8 @@
 <!-- Title -->
 <title>@yield("title")</title>
+<link href="{{asset('assets/images/Logo SD1.png')}}" rel="icon">
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico') }}" type="image/x-icon" />
 
 <!-- Font -->
 <link rel="stylesheet"
