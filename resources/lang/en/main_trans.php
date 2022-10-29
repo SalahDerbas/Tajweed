@@ -46,4 +46,7 @@ return [
     'Search'   => 'Search',
     'Filter'   => 'Filter',
     'Join To'   => 'Join To',
+    'Save'   => 'Save',
+    'Cancel'   => 'Cancel',
+
 ];

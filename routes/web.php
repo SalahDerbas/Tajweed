@@ -32,17 +32,8 @@ Route::group(
         
      //==============================dashboard============================
      Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-
+     Route::resource('Grades', 'GradeController');
         
 
     });
-
-Route::group(['prefix' => LaravelLocalization::setLocale()], function()
-{
-    
-
-    
-});
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
