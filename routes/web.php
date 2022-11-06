@@ -33,6 +33,8 @@ Route::group(
      //==============================dashboard============================
      Route::get('/dashboard', 'HomeController@index')->name('dashboard');
      Route::resource('Grades', 'GradeController');
+     Route::delete('grads_delete_all', 'GradeController@grads_delete_all')->name('grads_delete_all');
+
         
 
     });

@@ -113,4 +113,15 @@ class GradeController extends Controller
         toastr()->error(trans('messages.Delete'));
         return redirect()->route('Grades.index');
     }
+
+    public function grads_delete_all(request $request)
+    {
+
+
+        $delete_all_id = explode(",", $request->delete_all_id);
+
+        Grade::whereIn('id', $delete_all_id)->Delete();
+        toastr()->error(trans('messages.Delete'));
+        return redirect()->route('Grades.index');
+    }
 }

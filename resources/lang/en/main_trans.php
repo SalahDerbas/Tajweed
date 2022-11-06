@@ -48,5 +48,12 @@ return [
     'Join To'   => 'Join To',
     'Save'   => 'Save',
     'Cancel'   => 'Cancel',
+    'Are you sure you want to delete these Records?' => 'Are you sure you want to delete these Records?',
+    'Name' => 'Name',
+    'Name_en' => 'Name_en',
+    'ID' => 'ID',
+    'Notes' => 'Notes',
+    'Actions' => 'Actions',
+        
 
 ];
