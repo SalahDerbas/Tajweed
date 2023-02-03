@@ -54,6 +54,7 @@ return [
     'ID' => 'ID',
     'Notes' => 'Notes',
     'Actions' => 'Actions',
+    'Reset'   => 'Reset',
         
 
 ];

@@ -16,7 +16,8 @@ class GradeController extends Controller
     public function index()
     {
         $Grades = Grade::all();
-        return view ("admin.Grades.index" , compact('Grades'));
+        $search = '';
+        return view ("admin.Grades.index" , compact('Grades' , 'search'));
     }
 
     /**
@@ -110,18 +111,30 @@ class GradeController extends Controller
     public function destroy(Request $request)
     {
         $Grades = Grade::findOrFail($request->id)->delete();
-        toastr()->error(trans('messages.Delete'));
+        toastr()->success(trans('messages.Delete'));
         return redirect()->route('Grades.index');
     }
 
-    public function grads_delete_all(request $request)
-    {
 
+    public function search (Request $request)
+    {
+        $searchQuery = trim($request->search);
+        $requestData = ['Name','Notes'];
+
+        $Grades = Grade::where(function ($q) use ($requestData, $searchQuery) {
+              foreach ($requestData as $field)
+                  $q->orWhere($field, 'like', "%{$searchQuery}%");
+          })->get();
+        $search = $request->search;
+          return view('admin.Grades.index',compact('Grades' , 'search'));
+    }
+    public function grads_delete_all(Request $request)
+    {
 
         $delete_all_id = explode(",", $request->delete_all_id);
 
         Grade::whereIn('id', $delete_all_id)->Delete();
-        toastr()->error(trans('messages.Delete'));
+        toastr()->success(trans('messages.Delete'));
         return redirect()->route('Grades.index');
     }
 }

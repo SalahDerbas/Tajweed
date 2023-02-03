@@ -47,8 +47,23 @@
 										@endif
 								</div>
 								<div class="col-sm-6">
-									<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>{{trans('main_trans.Add Grade')}}</span></a>
+								<div class="container">
+								<div class="row">
+									<div class="col">
+									<form action="{{ route('Grades.search' ) }}" method="POST">
+										@csrf
+										<input type="text" name="search" id="search" value="{{ $search ?? '' }}" placeholder="{{ trans('main_trans.Search')}}" style="width:121px;height: 33px;margin-left:-38%;">
+										<a href="{{ route('Grades.index' ) }}"><button type="button" class="btn btn-info">{{ trans('main_trans.Reset')}}</button></a>
+									</form>
+									</div>
+									<div class="col">
+									<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal" ><i class="material-icons">&#xE147;</i> <span>{{trans('main_trans.Add Grade')}}</span></a>
+									</div>
+									<div class="col">
 									<a id="btn_delete_all" href="#deleteEmployeeModal1" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>{{trans('main_trans.Delete All')}}</span></a>						
+									</div>
+								</div>
+								</div>
 
 								</div>
 							</div>
